@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact IMT | B2B Enquiries, Catalogues & Partnerships</title>
+  <meta name="description" content="Send a B2B enquiry to Iberia Medical Trade Inc. — request a catalogue, ask about import or export, or open a partnership discussion.">
+  <link rel="canonical" href="./contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Iberia Medical Trade Inc.">
+  <meta property="og:title" content="Contact IMT | B2B Enquiries, Catalogues & Partnerships">
+  <meta property="og:description" content="Send a B2B enquiry to Iberia Medical Trade Inc. — request a catalogue, ask about import or export, or open a partnership discussion.">
+  <meta property="og:url" content="./contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact IMT | B2B Enquiries, Catalogues & Partnerships">
+  <meta name="twitter:description" content="Send a B2B enquiry to Iberia Medical Trade Inc. — request a catalogue, ask about import or export, or open a partnership discussion.">
+  <meta name="theme-color" content="#0B1F33">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <div class="container site-header__inner">
+      <a class="brand" href="./index.html" aria-label="Iberia Medical Trade Inc. — home">
+        <!-- Replace with assets/logo.svg (or logo.png) when available -->
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="presentation" focusable="false">
+            <rect x="1" y="1" width="38" height="38" rx="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 10v20M10 20h20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">IMT</span>
+          <span class="brand__sub">Iberia Medical Trade</span>
+        </span>
+      </a>
+
+      <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primaryNav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="./index.html">Home</a></li>
+          <li class="nav__item"><a class="nav__link" href="./about.html">About</a></li>
+          <li class="nav__item nav__item--has-menu">
+            <button class="nav__link nav__toggle" aria-expanded="false" aria-controls="menu-products">Products <span class="nav__caret" aria-hidden="true"></span></button>
+            <ul class="nav__submenu" id="menu-products">
+              <li><a href="./products.html">All Products</a></li>
+              <li><a href="./medical-devices.html">Medical Devices</a></li>
+              <li><a href="./beauty-products.html">Beauty Products</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="./asian-markets.html">Asian Markets</a></li>
+          <li class="nav__item"><a class="nav__link" href="./services.html">Services</a></li>
+          <li class="nav__item"><a class="nav__link" href="./quality-compliance.html">Quality &amp; Compliance</a></li>
+          <li class="nav__item"><a class="nav__link" href="./partners.html">Partners</a></li>
+          <li class="nav__item nav__item--cta"><a class="btn btn--primary btn--sm" href="./contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow reveal">Contact</p>
+        <h1 class="reveal">Send us an enquiry</h1>
+        <p class="page-hero__sub reveal">Complete the form below and we will route your enquiry to the right person. All enquiries are handled confidentially for B2B purposes.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <div class="contact-form-wrap reveal">
+          <!--
+            Front-end only for now. To make the form live, replace action="#" with your
+            Formspree endpoint, e.g. action="https://formspree.io/f/xxxx" and method="POST",
+            then remove the event.preventDefault() demo branch in js/main.js.
+          -->
+          <form id="enquiryForm" class="form" action="#" method="post" novalidate>
+            <div class="form__row">
+              <div class="field">
+                <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" required aria-describedby="err-fullName">
+                <p class="field__error" id="err-fullName" hidden></p>
+              </div>
+              <div class="field">
+                <label for="company">Company name <span class="req" aria-hidden="true">*</span></label>
+                <input id="company" name="company" type="text" autocomplete="organization" required aria-describedby="err-company">
+                <p class="field__error" id="err-company" hidden></p>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="err-email">
+                <p class="field__error" id="err-email" hidden></p>
+              </div>
+              <div class="field">
+                <label for="phone">Phone <span class="field__hint">(optional)</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="country">Country <span class="req" aria-hidden="true">*</span></label>
+                <input id="country" name="country" type="text" autocomplete="country-name" required aria-describedby="err-country">
+                <p class="field__error" id="err-country" hidden></p>
+              </div>
+              <div class="field">
+                <label for="inquiryType">Inquiry type <span class="req" aria-hidden="true">*</span></label>
+                <select id="inquiryType" name="inquiryType" required aria-describedby="err-inquiryType">
+                  <option value="">Please select…</option>
+                  <option value="price">Price inquiry</option>
+                  <option value="catalogue">Product catalogue</option>
+                  <option value="import">Import question</option>
+                  <option value="export">Export / order</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="logistics">Logistics</option>
+                  <option value="compliance">Compliance / quality</option>
+                  <option value="other">Other</option>
+                </select>
+                <p class="field__error" id="err-inquiryType" hidden></p>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="productFocus">Product focus</label>
+                <select id="productFocus" name="productFocus">
+                  <option value="medical">Medical devices</option>
+                  <option value="beauty">Beauty products</option>
+                  <option value="both" selected>Both</option>
+                  <option value="unsure">Not sure</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="urgency">Urgency</label>
+                <select id="urgency" name="urgency">
+                  <option value="standard" selected>Standard</option>
+                  <option value="time-sensitive">Time-sensitive</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="field field--fieldset">
+              <legend>Preferred contact method</legend>
+              <div class="radios">
+                <label class="radio"><input type="radio" name="contactMethod" value="email" checked> <span>Email</span></label>
+                <label class="radio"><input type="radio" name="contactMethod" value="phone"> <span>Phone</span></label>
+                <label class="radio"><input type="radio" name="contactMethod" value="either"> <span>Either</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="6" required aria-describedby="err-message" placeholder="Product category, destination market, indicative volumes and timeline."></textarea>
+              <p class="field__error" id="err-message" hidden></p>
+            </div>
+
+            <p class="privacy-note">Your enquiry is handled confidentially and used only to respond to your B2B request.</p>
+
+            <button class="btn btn--accent btn--lg" type="submit">Send enquiry</button>
+
+            <p class="form__status" id="formStatus" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+
+        <aside class="contact-aside reveal">
+          <div class="panel">
+            <h2>What to include</h2>
+            <ul class="ticks">
+              <li>Product category or specific item</li>
+              <li>Destination market or country</li>
+              <li>Indicative volumes</li>
+              <li>Required timeline</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h2>Response</h2>
+            <p>We review every enquiry and reply to qualified B2B requests. If we are not the right partner for your requirement, we will say so directly.</p>
+          </div>
+          <div class="panel">
+            <h2>Company</h2>
+            <p>Iberia Medical Trade Inc.<br>Spain, European Union</p>
+            <!-- Placeholder mailbox — replace with a verified address before launch. -->
+            <p class="footer__blurb--muted">contact@imt.eu <span class="footer__note">(placeholder)</span></p>
+            <p class="footer__note">No public street address or phone number is published at this stage.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__col footer__col--about">
+        <div class="brand brand--footer">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" role="presentation" focusable="false">
+              <rect x="1" y="1" width="38" height="38" rx="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 10v20M10 20h20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand__text"><span class="brand__name">IMT</span><span class="brand__sub">Iberia Medical Trade Inc.</span></span>
+        </div>
+        <p class="footer__blurb">A Spanish B2B trading company specialising in the import and export of medical devices and beauty products, with a dedicated focus on Asian markets.</p>
+        <p class="footer__tag">Spain &harr; Asia trade partner</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Company</h2>
+        <ul class="footer__links">
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./services.html">Import &amp; Export Services</a></li>
+          <li><a href="./quality-compliance.html">Quality &amp; Compliance</a></li>
+          <li><a href="./partners.html">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Products</h2>
+        <ul class="footer__links">
+          <li><a href="./products.html">Product Overview</a></li>
+          <li><a href="./medical-devices.html">Medical Devices</a></li>
+          <li><a href="./beauty-products.html">Beauty Products</a></li>
+          <li><a href="./asian-markets.html">Asian Markets</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Get in touch</h2>
+        <p class="footer__blurb">Enquiries are handled through our contact form so we can route them to the right team.</p>
+        <!-- Placeholder address only. Replace with a verified company mailbox before launch. -->
+        <p class="footer__blurb footer__blurb--muted">contact@imt.eu <span class="footer__note">(placeholder)</span></p>
+        <a class="btn btn--accent btn--sm" href="./contact.html">Request an Enquiry</a>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="container footer__bar-inner">
+        <p>&copy; <span id="year">2026</span> Iberia Medical Trade Inc. All rights reserved.</p>
+        <p class="footer__bar-note">Registered in Spain &middot; imt.eu</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
