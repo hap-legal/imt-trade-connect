@@ -74,7 +74,7 @@ ul,ol{margin:0 0 1rem;padding-left:1.1rem}
 .skip-link:focus{left:0}
 
 :where(a,button,input,select,textarea,summary):focus-visible{
-  outline:3px solid var(--mint-600);outline-offset:3px;border-radius:6px;
+  outline:2px solid var(--sage);outline-offset:3px;border-radius:999px;
 }
 
 /* ---------- Header / nav ---------- */
