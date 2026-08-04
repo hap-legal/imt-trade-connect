@@ -402,3 +402,10 @@ textarea{resize:vertical;min-height:140px}
   .page-hero{border-radius:0 0 32px 32px}
   .media,.feature-card__img{border-radius:120px 120px 24px 24px}
 }
+
+/* Editorial photography + scope notes */
+.shot{margin:0}
+.shot__img{width:100%;height:auto;display:block;border-radius:var(--radius-sm);box-shadow:var(--shadow-soft);object-fit:cover}
+.shot figcaption,.shot__img+figcaption{margin-top:12px;font-size:.9rem;color:var(--muted);letter-spacing:.01em}
+.note--rule{border-left:3px solid var(--gold);padding:14px 18px;background:var(--white);border-radius:var(--radius-sm);margin-top:28px}
+.footer__credit{max-width:900px;margin:14px auto 0;font-size:.78rem;line-height:1.7;opacity:.62;text-align:center}
