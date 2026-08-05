@@ -433,3 +433,5 @@ textarea{resize:vertical;min-height:140px}
 .faq__item h3{margin:0 0 6px;font-size:1.05rem}
 .faq__item p{margin:0;color:var(--gray,#5a6560)}
 .card--primary{border-color:var(--gold,#C9A84C)}
+
+.section--navy .note{color:#c8d5cd;border-color:rgba(255,255,255,.22)}
