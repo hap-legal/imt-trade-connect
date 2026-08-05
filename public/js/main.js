@@ -142,15 +142,25 @@
       return;
     }
 
-    /* DEMO BRANCH — remove these lines once a real endpoint (e.g. Formspree)
-       is set in the form's action attribute so the browser submits normally. */
-    e.preventDefault();
+    /* No delivery endpoint configured yet (form action="#"). Do NOT show a
+       success message that implies the enquiry was sent. Set a real endpoint
+       (e.g. action="https://formspree.io/f/xxxx" method="post") and this
+       branch stops running so the browser submits normally. See README. */
+    var action = (form.getAttribute("action") || "").trim();
+    if (!action || action === "#") {
+      e.preventDefault();
+      if (status) {
+        status.hidden = false;
+        status.className = "form__status is-error";
+        status.textContent = "This enquiry could not be sent right now. Please try again shortly.";
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      return;
+    }
     if (status) {
       status.hidden = false;
       status.className = "form__status is-success";
-      status.textContent = "Thank you — your enquiry has been prepared. This form is not yet connected to a mail service; add your Formspree endpoint to start receiving submissions.";
-      status.scrollIntoView({ behavior: "smooth", block: "center" });
+      status.textContent = "Thank you — your enquiry has been sent. We reply to qualified B2B enquiries by email.";
     }
-    form.reset();
   });
 })();

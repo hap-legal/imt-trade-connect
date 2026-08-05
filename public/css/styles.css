@@ -409,3 +409,29 @@ textarea{resize:vertical;min-height:140px}
 .shot figcaption,.shot__img+figcaption{margin-top:12px;font-size:.9rem;color:var(--muted);letter-spacing:.01em}
 .note--rule{border-left:3px solid var(--gold);padding:14px 18px;background:var(--white);border-radius:var(--radius-sm);margin-top:28px}
 .footer__credit{max-width:900px;margin:14px auto 0;font-size:.78rem;line-height:1.7;opacity:.62;text-align:center}
+
+/* ---- Trust & legitimacy pass ---- */
+.hero__bg{
+  background:
+    linear-gradient(155deg,rgba(45,58,49,.94) 0%,rgba(45,58,49,.82) 46%,rgba(38,49,42,.95) 100%),
+    radial-gradient(1000px 520px at 82% -10%,rgba(140,154,132,.32),transparent 62%),
+    url("../assets/photos/facial-device-treatment.jpg") center/cover no-repeat,
+    linear-gradient(155deg,#2D3A31,#26312A);
+}
+.eyebrow{text-transform:none;letter-spacing:.14em;font-size:.78rem}
+
+.strip{border-top:1px solid var(--line,rgba(45,58,49,.14));border-bottom:1px solid var(--line,rgba(45,58,49,.14));
+  background:rgba(255,255,255,.4)}
+.strip__inner{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:center;
+  padding:18px 24px;font-size:.86rem;letter-spacing:.06em;color:var(--gray,#5a6560);text-align:center}
+.strip__inner span{position:relative;padding-left:18px}
+.strip__inner span::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;
+  border-radius:50%;background:var(--gold,#C9A84C)}
+
+.faq{display:grid;gap:14px;max-width:820px}
+.faq__item{border:1px solid var(--line,rgba(45,58,49,.14));border-radius:14px;padding:18px 22px;background:#fff}
+.faq__item h3{margin:0 0 6px;font-size:1.05rem}
+.faq__item p{margin:0;color:var(--gray,#5a6560)}
+.card--primary{border-color:var(--gold,#C9A84C)}
+
+.section--navy .note{color:#c8d5cd;border-color:rgba(255,255,255,.22)}
