@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://imt.eu/sitemap.xml
+Sitemap: https://www.iberamt.com/sitemap.xml

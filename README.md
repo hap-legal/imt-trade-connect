@@ -1,6 +1,6 @@
-# Iberia Medical Trade Inc. (IMT) — corporate website
+# Ibera Medical Trade Inc. (IMT) — corporate website
 
-Static corporate website for **Iberia Medical Trade Inc. (IMT)**, a Spanish B2B company
+Static corporate website for **Ibera Medical Trade Inc. (IMT)**, a Spanish B2B company
 specialising in the import and export of medical devices and beauty products, with a
 commercial focus on Asian markets.
 
@@ -28,7 +28,7 @@ public/
   assets/logo.svg, assets/favicon.svg
   robots.txt
   sitemap.xml
-  CNAME                 imt.eu
+  CNAME                 www.iberamt.com
 ```
 
 ## Base URL / paths
@@ -37,7 +37,7 @@ All internal links and asset references are **relative** (`./about.html`,
 `./css/styles.css`), so the site works unchanged on both:
 
 - `https://hap-legal.github.io/IMT/` (GitHub project page, served under `/IMT/`)
-- `https://imt.eu/` (future apex custom domain)
+- `https://www.iberamt.com/` (primary public domain)
 
 Do **not** switch to root-absolute paths (`/css/styles.css`) — they break under the
 `/IMT/` project-page prefix. If a `<base>` tag or absolute URLs are ever needed,
@@ -62,8 +62,8 @@ The site must sit at the repository root of the published branch.
 2. In GitHub: **Settings → Pages → Build and deployment → Deploy from a branch**.
 3. Branch: `main`, folder: `/ (root)` → **Save**.
 4. Wait for the Pages build, then open `https://hap-legal.github.io/IMT/`.
-5. Custom domain: once `imt.eu` DNS points at GitHub Pages, keep the `CNAME` file
-   (contents: `imt.eu`) at the published root and enable **Enforce HTTPS**.
+5. Custom domain: point `iberamt.com` DNS at the host and keep www/apex consistent.
+   Keep the `CNAME` file (contents: `www.iberamt.com`) at the published root and enable **Enforce HTTPS**.
 
 ## Replace the contact form endpoint
 
@@ -83,7 +83,7 @@ Client-side validation and the success/error message UI stay in place either way
 Replace `public/assets/logo.svg` (or add `logo.png`) with the official artwork.
 The header and footer currently render an inline placeholder mark — swap the
 `<span class="brand__mark">…</span>` SVG in each HTML file for
-`<img src="./assets/logo.svg" alt="Iberia Medical Trade Inc." width="160" height="40">`.
+`<img src="./assets/logo.svg" alt="Ibera Medical Trade Inc." width="160" height="40">`.
 Also replace `public/assets/favicon.svg`.
 
 ## Images
@@ -98,3 +98,9 @@ Pages declare `lang="en"` and use clearly separated content blocks. To add a lan
 duplicate the HTML files into a locale folder (e.g. `es/`, `ko/`), set the `lang`
 attribute, translate the content, and add `hreflang` links plus new `sitemap.xml`
 entries.
+
+## Domain
+
+Canonical public host: `https://www.iberamt.com`. Point `iberamt.com` DNS to the host and keep
+www/apex consistent. `imt.eu` may later be redirected or aliased to it; it is not the primary
+public URL and must not appear in site chrome until it serves this site.

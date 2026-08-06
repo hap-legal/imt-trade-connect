@@ -4,8 +4,9 @@
   "use strict";
 
   /* ---- Footer year ---- */
-  var year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
+  var y = String(new Date().getFullYear());
+  var yearEls = document.querySelectorAll("#year, .js-year");
+  for (var yi = 0; yi < yearEls.length; yi++) yearEls[yi].textContent = y;
 
   /* ---- Sticky header shadow ---- */
   var header = document.getElementById("siteHeader");
