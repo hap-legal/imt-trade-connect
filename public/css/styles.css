@@ -74,8 +74,11 @@ ul,ol{margin:0 0 1rem;padding-left:1.1rem}
 .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:var(--alabaster);padding:12px 18px;border-radius:0 0 8px 0}
 .skip-link:focus{left:0}
 
-:where(a,button,input,select,textarea,summary):focus-visible{
+:where(a,button,summary):focus-visible{
   outline:2px solid var(--sage);outline-offset:3px;border-radius:999px;
+}
+:where(input,select,textarea):focus-visible{
+  outline:2px solid var(--sage);outline-offset:2px;border-radius:10px;
 }
 
 /* ---------- Header / nav ---------- */
@@ -292,12 +295,13 @@ ul,ol{margin:0 0 1rem;padding-left:1.1rem}
 .req{color:var(--terracotta)}
 input[type=text],input[type=email],input[type=tel],select,textarea{
   font:inherit;font-size:.98rem;color:var(--ink);background:var(--clay-050);
-  border:1px solid transparent;border-bottom:1px solid var(--clay);border-radius:14px;padding:14px 16px;width:100%;
+  border:1px solid transparent;border-bottom:1px solid var(--clay);border-radius:10px;padding:14px 16px;width:100%;
   transition:border-color .2s,box-shadow .2s;
 }
 input:hover,select:hover,textarea:hover{border-bottom-color:var(--sage)}
 input:focus,select:focus,textarea:focus{outline:none;background:var(--white);border-color:var(--sage);box-shadow:0 0 0 3px color-mix(in srgb,var(--sage) 25%,transparent)}
-textarea{resize:vertical;min-height:140px}
+textarea{resize:vertical;min-height:160px;border-radius:10px}
+textarea:focus,textarea:focus-visible{border-radius:10px}
 .field--fieldset{border:0;padding:0;margin:0 0 20px}
 .radios{display:flex;flex-wrap:wrap;gap:18px}
 .radio{display:inline-flex;align-items:center;gap:8px;font-weight:400;font-size:.95rem;margin:0}
