@@ -1,6 +1,6 @@
-# Iberia Medical Trade Inc. (IMT) — corporate website
+# Ibera Medical Trade Inc. (IMT) — corporate website
 
-Static corporate website for **Iberia Medical Trade Inc. (IMT)**, a Spanish B2B company
+Static corporate website for **Ibera Medical Trade Inc. (IMT)**, a Spanish B2B company
 specialising in the import and export of medical devices and beauty products, with a
 commercial focus on Asian markets.
 
@@ -83,7 +83,7 @@ Client-side validation and the success/error message UI stay in place either way
 Replace `public/assets/logo.svg` (or add `logo.png`) with the official artwork.
 The header and footer currently render an inline placeholder mark — swap the
 `<span class="brand__mark">…</span>` SVG in each HTML file for
-`<img src="./assets/logo.svg" alt="Iberia Medical Trade Inc." width="160" height="40">`.
+`<img src="./assets/logo.svg" alt="Ibera Medical Trade Inc." width="160" height="40">`.
 Also replace `public/assets/favicon.svg`.
 
 ## Images
