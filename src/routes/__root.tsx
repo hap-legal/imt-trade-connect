@@ -77,11 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Ibera Medical Trade Inc. (IMT)" },
+      {
+        name: "description",
+        content:
+          "Ibera Medical Trade Inc. — Spain-based B2B trading of non-surgical beauty and wellness devices and pharmaceutical ingredients, with a focus on Asian markets.",
+      },
+      { name: "author", content: "Ibera Medical Trade Inc." },
+      { property: "og:title", content: "Ibera Medical Trade Inc. (IMT)" },
+      {
+        property: "og:description",
+        content:
+          "Spain-based B2B trading of non-surgical beauty and wellness devices and pharmaceutical ingredients.",
+      },
+      { property: "og:site_name", content: "Ibera Medical Trade Inc." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
@@ -91,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
