@@ -464,3 +464,31 @@ textarea:focus,textarea:focus-visible{border-radius:10px}
 @media (max-width:640px){.legal__id dl{grid-template-columns:1fr;gap:2px 0}.legal__id dd{margin-bottom:12px}}
 .office-card address{font-style:normal;line-height:1.9;margin:0 0 10px}
 .office-card .office-card__meta{font-size:.92rem;color:var(--muted);margin:0}
+
+/* ---------- Cookie consent ---------- */
+.cc{position:fixed;inset:auto 0 0 0;z-index:120;display:none;padding:0 16px 16px}
+.cc.is-open{display:block}
+.cc__panel{max-width:1080px;margin:0 auto;background:var(--white);border:1px solid var(--stone);
+  border-top:3px solid var(--gold,#C9A84C);border-radius:var(--radius-sm,12px);
+  box-shadow:0 24px 60px rgba(20,30,24,.18);padding:26px 28px}
+.cc__title{margin:0 0 8px;font-size:1.12rem;color:var(--navy,#0B1F33)}
+.cc__text{margin:0;font-size:.92rem;line-height:1.75;color:var(--muted);max-width:70ch}
+.cc__text a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--sage);text-underline-offset:3px}
+.cc__actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.cc__actions .btn{min-width:170px;justify-content:center}
+.cc__link{background:none;border:0;padding:0;font:inherit;font-size:.88rem;color:var(--muted);
+  text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cc__link:hover{color:var(--ink)}
+.cc__options{display:none;margin:20px 0 0;padding-top:18px;border-top:1px solid var(--stone);gap:14px}
+.cc.is-expanded .cc__options{display:grid}
+.cc__opt{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start;
+  border:1px solid var(--stone);border-radius:10px;padding:14px 16px}
+.cc__opt input{width:18px;height:18px;margin-top:3px;accent-color:var(--sage)}
+.cc__opt strong{font-size:.95rem}
+.cc__opt span{grid-column:2;font-size:.86rem;color:var(--muted);line-height:1.6}
+.cc__backdrop{position:fixed;inset:0;background:rgba(20,30,24,.35);z-index:119;display:none}
+.cc__backdrop.is-open{display:block}
+@media (max-width:640px){
+  .cc__panel{padding:20px}
+  .cc__actions .btn{flex:1 1 100%;min-width:0}
+}
