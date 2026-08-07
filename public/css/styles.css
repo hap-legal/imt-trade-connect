@@ -318,7 +318,10 @@ textarea:focus,textarea:focus-visible{border-radius:10px}
 .footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:56px}
 .brand--footer{color:var(--alabaster);margin-bottom:18px}
 .brand--footer .brand__name{color:var(--alabaster)}
-.brand--footer .brand__sub{color:#A9B3A6}
+.brand--footer .brand__sub{color:#CFD6CC;text-transform:none;letter-spacing:.02em;font-size:.92rem;
+  font-family:var(--font-sans);margin-top:4px;white-space:nowrap}
+.brand--footer .brand__text{gap:2px;line-height:1.25}
+@media (max-width:400px){.brand--footer .brand__sub{white-space:normal}}
 .footer__blurb{font-size:.93rem;margin-bottom:12px}
 .footer__blurb--muted{color:#e6eef0}
 .footer__note{font-size:.8rem;color:#9AA79B}
@@ -370,7 +373,7 @@ textarea:focus,textarea:focus-visible{border-radius:10px}
   .footer__grid{grid-template-columns:1fr;gap:32px}
   .hero__facts{gap:24px}
   .step{gap:14px}
-  .brand__sub{display:none}
+  .site-header .brand__sub{display:none}
 }
 
 /* ---------- Botanical rhythm: aligned grid + arch media ---------- */
