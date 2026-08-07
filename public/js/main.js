@@ -165,3 +165,137 @@
     }
   });
 })();
+
+/* ---- Cookie consent (GDPR/ePrivacy-style: opt-in, equal prominence,
+   granular categories, withdrawable at any time) ---- */
+(function () {
+  "use strict";
+
+  var KEY = "imt-cookie-consent";
+  var VERSION = 1;
+
+  function read() {
+    try {
+      var raw = window.localStorage.getItem(KEY);
+      if (!raw) return null;
+      var val = JSON.parse(raw);
+      if (!val || val.version !== VERSION) return null;
+      return val;
+    } catch (e) { return null; }
+  }
+
+  function save(prefs) {
+    var record = {
+      version: VERSION,
+      date: new Date().toISOString(),
+      necessary: true,
+      functional: !!prefs.functional,
+      analytics: !!prefs.analytics
+    };
+    try { window.localStorage.setItem(KEY, JSON.stringify(record)); } catch (e) {}
+    document.dispatchEvent(new CustomEvent("imt:cookie-consent", { detail: record }));
+    return record;
+  }
+
+  var backdrop = document.createElement("div");
+  backdrop.className = "cc__backdrop";
+
+  var banner = document.createElement("section");
+  banner.className = "cc";
+  banner.setAttribute("role", "dialog");
+  banner.setAttribute("aria-modal", "false");
+  banner.setAttribute("aria-labelledby", "ccTitle");
+  banner.setAttribute("aria-describedby", "ccText");
+  banner.innerHTML =
+    '<div class="cc__panel">' +
+      '<h2 class="cc__title" id="ccTitle">Cookies and similar technologies</h2>' +
+      '<p class="cc__text" id="ccText">This website uses only storage that is strictly necessary for the pages to work. ' +
+      'Optional categories &mdash; such as remembering display preferences or measuring how the site is used &mdash; ' +
+      'are switched off until you allow them. No advertising or profiling technologies are used. ' +
+      'You can change or withdraw your choice at any time. Details are in our ' +
+      '<a href="./cookies.html">Cookie notice</a> and <a href="./privacidad.html">Privacy policy</a>.</p>' +
+      '<div class="cc__options" id="ccOptions">' +
+        '<label class="cc__opt"><input type="checkbox" checked disabled aria-label="Strictly necessary (always active)">' +
+          '<strong>Strictly necessary (always active)</strong>' +
+          '<span>Required for page display, security and to remember this cookie choice. Cannot be switched off.</span></label>' +
+        '<label class="cc__opt"><input type="checkbox" id="ccFunctional">' +
+          '<strong>Functional</strong>' +
+          '<span>Remembers optional preferences, such as language or display settings, to improve your visit.</span></label>' +
+        '<label class="cc__opt"><input type="checkbox" id="ccAnalytics">' +
+          '<strong>Analytics</strong>' +
+          '<span>Aggregated, non-advertising measurement of page usage. Not currently active on this site; enabling it applies only if such measurement is introduced.</span></label>' +
+      '</div>' +
+      '<div class="cc__actions">' +
+        '<button type="button" class="btn btn--primary btn--sm" id="ccAccept">Accept all</button>' +
+        '<button type="button" class="btn btn--outline btn--sm" id="ccReject">Reject optional</button>' +
+        '<button type="button" class="btn btn--outline btn--sm" id="ccSave" hidden>Save my choices</button>' +
+        '<button type="button" class="cc__link" id="ccToggle" aria-expanded="false" aria-controls="ccOptions">Manage preferences</button>' +
+      '</div>' +
+    '</div>';
+
+  document.body.appendChild(backdrop);
+  document.body.appendChild(banner);
+
+  var elFunctional = banner.querySelector("#ccFunctional");
+  var elAnalytics = banner.querySelector("#ccAnalytics");
+  var btnSave = banner.querySelector("#ccSave");
+  var btnToggle = banner.querySelector("#ccToggle");
+
+  function open(expanded) {
+    var current = read();
+    if (current) {
+      elFunctional.checked = !!current.functional;
+      elAnalytics.checked = !!current.analytics;
+    }
+    banner.classList.add("is-open");
+    backdrop.classList.toggle("is-open", !!expanded);
+    setExpanded(!!expanded);
+    banner.querySelector("#ccAccept").focus();
+  }
+
+  function close() {
+    banner.classList.remove("is-open", "is-expanded");
+    backdrop.classList.remove("is-open");
+  }
+
+  function setExpanded(state) {
+    banner.classList.toggle("is-expanded", state);
+    btnToggle.setAttribute("aria-expanded", String(state));
+    btnToggle.textContent = state ? "Hide preferences" : "Manage preferences";
+    btnSave.hidden = !state;
+  }
+
+  btnToggle.addEventListener("click", function () {
+    setExpanded(!banner.classList.contains("is-expanded"));
+  });
+  banner.querySelector("#ccAccept").addEventListener("click", function () {
+    save({ functional: true, analytics: true });
+    close();
+  });
+  banner.querySelector("#ccReject").addEventListener("click", function () {
+    save({ functional: false, analytics: false });
+    close();
+  });
+  btnSave.addEventListener("click", function () {
+    save({ functional: elFunctional.checked, analytics: elAnalytics.checked });
+    close();
+  });
+
+  /* Reopen from footer links / any [data-cookie-settings] control */
+  document.addEventListener("click", function (e) {
+    var trigger = e.target.closest ? e.target.closest("[data-cookie-settings]") : null;
+    if (!trigger) return;
+    e.preventDefault();
+    open(true);
+  });
+
+  /* Add a "Cookie settings" entry to the footer legal bar on every page */
+  var legal = document.querySelector(".footer__legal");
+  if (legal && !legal.querySelector("[data-cookie-settings]")) {
+    var li = document.createElement("li");
+    li.innerHTML = '<a href="#" data-cookie-settings>Cookie settings</a>';
+    legal.appendChild(li);
+  }
+
+  if (!read()) open(false);
+})();
