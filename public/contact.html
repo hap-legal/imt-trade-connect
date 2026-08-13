@@ -90,12 +90,10 @@
     <section class="section">
       <div class="container contact-layout">
         <div class="contact-form-wrap reveal">
-          <!--
-            Front-end only for now. To make the form live, replace action="#" with your
-            Formspree endpoint, e.g. action="https://formspree.io/f/xxxx" and method="POST",
-            then remove the event.preventDefault() demo branch in js/main.js.
-          -->
-          <form id="enquiryForm" class="form" action="#" method="post" novalidate>
+          <form id="enquiryForm" class="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="aa8c0eec-80a1-4b29-a9d5-08916b49dc18">
+
             <div class="form__row">
               <div class="field">
                 <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
